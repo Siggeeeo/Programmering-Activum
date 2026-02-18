@@ -3,13 +3,25 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="PRG1_MAUI_ERP_Activum.View.InsurancePage"
              Title="Försäkringar">
-    <VerticalStackLayout>
-        <Label
-            Padding="20"
-            Text="Försäkringar"
-            Style="{StaticResource Headline}"
-            SemanticProperties.HeadingLevel="Level1"
-            VerticalOptions="Center" 
-            HorizontalOptions="Center" />
-    </VerticalStackLayout>
+    <Grid RowDefinitions="Auto, *" BackgroundColor="{StaticResource White}">
+
+        <Grid Grid.Row="0" BackgroundColor="{StaticResource Primary}" HeightRequest="100" Padding="25">
+            <Label Text="Mina försäkringar" 
+                   VerticalOptions="Center"
+                   TextColor="{StaticResource White}"
+                   FontSize="25" FontAttributes="Bold"/>
+        </Grid>
+
+        <ScrollView Grid.Row="1" Padding="20">
+            <VerticalStackLayout Spacing="20">
+
+                <Frame BorderColor="{StaticResource Gray200}" CornerRadius="10" Padding="15" BackgroundColor="{StaticResource White}"/>
+                <VerticalStackLayout Spacing="10">
+                    <Label Text="Skapa ny skadeanmälan" FontSize="20" TextColor="{StaticResource Primary}" />
+                </VerticalStackLayout>
+
+            </VerticalStackLayout>
+        </ScrollView> 
+        
+    </Grid>
 </ContentPage>
