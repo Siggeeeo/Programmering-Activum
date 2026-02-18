@@ -3,13 +3,35 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="PRG1_MAUI_ERP_Activum.View.PerDiemPage"
              Title="Traktamenten">
-    <VerticalStackLayout>
-        <Label 
-            Padding="20"
-            Text="Traktamenten"
-            Style="{StaticResource Headline}"
-            SemanticProperties.HeadingLevel="Level1"
-            VerticalOptions="Center" 
-            HorizontalOptions="Center" />
-    </VerticalStackLayout>
+
+    <Grid RowDefinitions="Auto, *" BackgroundColor="{StaticResource White}">
+        <Grid Grid.Row="0" BackgroundColor="{StaticResource Primary}" HeightRequest="80" Padding="20,0">
+            <Label Text="Traktamente" VerticalOptions="Center" TextColor="{StaticResource Black}" FontSize="24" FontAttributes="Bold"/>
+        </Grid>
+
+        <ScrollView Grid.Row="1" Padding="20">
+            <VerticalStackLayout Spacing="15">
+                <Label Text="Ny reseräkning"  TextColor="{StaticResource Black}"/>
+
+                <Entry Placeholder="Destination / Resmål" TextColor="{StaticResource Black}"/>
+                <Entry Placeholder="Syfte med resan" TextColor="{StaticResource Black}"/>
+
+                <Grid ColumnDefinitions="*,*" ColumnSpacing="10">
+                    <VerticalStackLayout Grid.Column="0">
+                        <Label Text="Avresa:" TextColor="{StaticResource Black}"/>
+                        <DatePicker TextColor="{StaticResource Black}"/>
+                    </VerticalStackLayout>
+                    <VerticalStackLayout Grid.Column="1">
+                        <Label Text="Hemkomst:" TextColor="{StaticResource Black}"/>
+                        <DatePicker TextColor="{StaticResource Black}"/>
+                    </VerticalStackLayout>
+                </Grid>
+
+                <Label Text="Utlägg kr:" TextColor="{StaticResource Black}"/>
+                <Entry Keyboard="Numeric" Placeholder="0 kr" TextColor="{StaticResource Black}"/>
+
+                <Button Text="Skicka in rapport" BackgroundColor="{StaticResource Tertiary}" TextColor="{StaticResource Black}" Margin="0,20,0,0"/>
+            </VerticalStackLayout>
+        </ScrollView>
+    </Grid>
 </ContentPage>
