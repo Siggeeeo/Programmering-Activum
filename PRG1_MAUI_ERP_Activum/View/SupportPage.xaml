@@ -3,13 +3,22 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="PRG1_MAUI_ERP_Activum.View.SupportPage"
              Title="Hjälp &amp; Support">
-    <VerticalStackLayout>
-        <Label
-            Padding="20"
-            Text="Hjälp &amp; Support"
-            Style="{StaticResource Headline}"
-            SemanticProperties.HeadingLevel="Level1"
-            VerticalOptions="Center" 
-            HorizontalOptions="Center" />
-    </VerticalStackLayout>
+    <Grid RowDefinitions="Auto, *" BackgroundColor="{StaticResource White}">
+        <Grid Grid.Row="0" BackgroundColor="{StaticResource Primary}" HeightRequest="80" Padding="20,0">
+            <Label Text="Hjälp Och Support" VerticalOptions="Center" TextColor="{StaticResource White}" FontSize="24" FontAttributes="Bold"/>
+        </Grid>
+
+        <ScrollView Grid.Row="1" Padding="20">
+            <VerticalStackLayout Spacing="15">
+                <Label Text="Kontakta IT-avdelningen" FontSize="18" TextColor="{StaticResource Black}" />
+                <Label Text="Beskriv ditt problem nedan." TextColor="{StaticResource Black}"/>
+
+                <Entry Placeholder="Ämne" TextColor="{StaticResource Black}"/>
+                <Editor Placeholder="Beskriv problemet..." HeightRequest="150" BackgroundColor="{StaticResource Gray100}" TextColor="{StaticResource Black}"/>
+
+                <Button Text="Skicka Ärende" BackgroundColor="{StaticResource Tertiary}" TextColor="{StaticResource Black}"/>
+            </VerticalStackLayout>
+        </ScrollView>
+    </Grid>
+
 </ContentPage>
