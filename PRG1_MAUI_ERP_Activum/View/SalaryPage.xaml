@@ -5,7 +5,7 @@
              Title="Lön och Bonus">
     <Grid RowDefinitions="Auto, *" BackgroundColor="{StaticResource White}">
         <Grid Grid.Row="0" BackgroundColor="{StaticResource Primary}" HeightRequest="80" Padding="20,0">
-            <Label Text="Lön och Bonus" VerticalOptions="Center" TextColor="{StaticResource White}" FontSize="24"/>
+            <Label Text="Lön och Bonus" VerticalOptions="Center" TextColor="{StaticResource White}" FontSize="24" FontAttributes="Bold"/>
         </Grid>
 
         <ScrollView Grid.Row="1" Padding="20">
@@ -13,15 +13,15 @@
                 <Frame BackgroundColor="{StaticResource White}" BorderColor="{StaticResource Gray200}" CornerRadius="10" Padding="15">
                     <VerticalStackLayout>
                         <Label Text="Aktuell Månadslön" FontSize="14" TextColor="{StaticResource Gray500}"/>
-                        <Label Text="32 500 kr" FontSize="28" TextColor="{StaticResource Primary}"/>
+                        <Label Text="32 500 kr" FontSize="28" FontAttributes="Bold" TextColor="{StaticResource Primary}"/>
                     </VerticalStackLayout>
                 </Frame>
 
-                <Label Text="Utbetalningar" FontSize="18" TextColor="{StaticResource Primary}" Margin="0,10,0,0"/>
+                <Label Text="Utbetalningar" FontSize="18" FontAttributes="Bold" TextColor="{StaticResource Primary}" Margin="0,10,0,0"/>
 
                 <Grid ColumnDefinitions="*, Auto" Padding="10" BackgroundColor="{StaticResource Gray100}">
                     <Label Grid.Column="0" Text="2026-01-25 (Januari)" TextColor="{StaticResource Black}" VerticalOptions="Center"/>
-                    <Label Grid.Column="1" Text="24 100 kr" TextColor="{StaticResource Black}" VerticalOptions="Center"/>
+                    <Label Grid.Column="1" Text="24 100 kr" FontAttributes="Bold" TextColor="{StaticResource Black}" VerticalOptions="Center"/>
                 </Grid>
 
                 <Button Text="Ladda ner lönespecifikation" BackgroundColor="{StaticResource Tertiary}" TextColor="{StaticResource White}" Margin="0,20,0,0"/>
