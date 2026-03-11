@@ -3,13 +3,77 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="PRG1_MAUI_ERP_Activum.View.PerDiemPage"
              Title="Traktamenten">
-    <VerticalStackLayout>
-        <Label 
-            Padding="20"
-            Text="Traktamenten"
-            Style="{StaticResource Headline}"
-            SemanticProperties.HeadingLevel="Level1"
-            VerticalOptions="Center" 
-            HorizontalOptions="Center" />
-    </VerticalStackLayout>
+
+    <Grid RowDefinitions="Auto, *"
+      BackgroundColor="{StaticResource White}">
+
+        <Grid Grid.Row="0" 
+          BackgroundColor="{StaticResource Primary}" 
+          HeightRequest="80" 
+          Padding="20,0">
+            <Label Text="Traktamente" 
+               VerticalOptions="Center" 
+               TextColor="{StaticResource White}" 
+               FontSize="24" 
+               FontAttributes="Bold"/>
+            
+            
+        </Grid>
+
+        <ScrollView Grid.Row="1" Padding="20">
+            <VerticalStackLayout Spacing="18">
+
+                <Label Text="Ny reseräkning" 
+                       
+                   FontSize="18" 
+                   TextColor="{StaticResource Primary}" 
+                   FontAttributes="Bold"
+                   Margin="0,5,0,10"/>
+
+                <Entry Placeholder="Destination / Resmål" 
+                   TextColor="Black"
+                   Margin="0,0,0,12" />
+
+                <Entry Placeholder="Syfte med resan" 
+                   TextColor="Black"
+                   Margin="0,0,0,20" />
+
+                <Grid ColumnDefinitions="*,*" 
+                  ColumnSpacing="12"
+                  Margin="0,0,0,15">
+                    <VerticalStackLayout Grid.Column="0">
+                        <Label Text="Avresa:" 
+                           TextColor="{StaticResource Gray500}"
+                           Margin="0,0,0,5"/>
+                        <DatePicker />
+                    </VerticalStackLayout>
+                    <VerticalStackLayout Grid.Column="1">
+                        <Label Text="Hemkomst:" 
+                           TextColor="{StaticResource Gray500}"
+                           Margin="0,0,0,5"/>
+                        <DatePicker />
+                    </VerticalStackLayout>
+                </Grid>
+
+                <Label Text="Utlägg (kr):" 
+                   TextColor="{StaticResource Gray500}"
+                   Margin="0,0,0,8"/>
+                <Entry Keyboard="Numeric" 
+                   Placeholder="0 kr" 
+                       
+                   TextColor="Black"
+                   Margin="0,0,0,25" />
+
+                <Button Text="Skicka rapport" 
+                    BackgroundColor="{StaticResource Tertiary
+                    }" 
+                    TextColor="{StaticResource White}" 
+                        
+                        
+                    Margin="0,20,0,10"/>
+
+            </VerticalStackLayout>
+        </ScrollView>
+    </Grid>
+
 </ContentPage>
