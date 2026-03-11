@@ -2,44 +2,88 @@
 <ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="PRG1_MAUI_ERP_Activum.View.AboutPage"
-             Title="Om Macrosoft">
-    <Grid RowDefinitions="Auto, *, Auto" Padding="20" BackgroundColor="{StaticResource PageBackground}">
+             Title="Om Oss"
+             BackgroundColor="White">
 
+    <ScrollView Padding="30">
+        <VerticalStackLayout Spacing="30" 
+                              VerticalOptions="Center"
+                              HorizontalOptions="Center">
 
-        <VerticalStackLayout Grid.Row="0" Spacing="10">
-            <Label Text="Välkommen"
-                   FontSize="32"
-                   FontAttributes="Bold"
-                   TextColor="{StaticResource Primary}"
-                   HorizontalOptions="Center"/>
-            <BoxView HeightRequest="2"
-             Color="{StaticResource Primary}"
-             WidthRequest="200"/>
-        </VerticalStackLayout>
-
-        <VerticalStackLayout Grid.Row="1" Spacing="25" VerticalOptions="Center">
-            <Label Text="Välkommen till Activum"
-                   FontSize="20"
-                   FontAttributes="Bold"
+            <Label Text="Utvecklingsteamet" 
+                   FontSize="32" 
+                   FontAttributes="Bold" 
+                   TextColor="Black" 
                    HorizontalOptions="Center"
-                   TextColor="{StaticResource TextSecondary}"/>
+                   Margin="0,20,0,0"/>
 
-            <Label Text="Din app för smidig hantering av försäkringar, traktamenten och lönerapportering."
-                   HorizontalTextAlignment="Center"
-                   FontSize="15"
-                   TextColor="{StaticResource TextPrimary}"/>
+            <Frame BackgroundColor="White" 
+                   BorderColor="#E5E5E5" 
+                   CornerRadius="15" 
+                   Padding="25"
+                   HasShadow="True"
+                   MaximumWidthRequest="400">
+                <VerticalStackLayout Spacing="16">
+                    <Label Text="Vilka är vi?" 
+                           FontSize="22" 
+                           FontAttributes="Bold" 
+                           TextColor="Black" 
+                           HorizontalOptions="Center"/>
+
+                    <Label Text="Vi är två passionerade utvecklare som har byggt detta ERP-system för Activum AB. Vi fokuserar på snygg design och stabil kod."
+                           TextColor="#333333" 
+                           FontSize="16"
+                           HorizontalOptions="Center"
+                           LineBreakMode="WordWrap"/>
+
+                    <Label Text="Prestationstest: Båda utvecklarna scorade 98/100 i stress och logiktester, samt att vi är fina och sten smarta." 
+                           FontAttributes="Italic" 
+                           TextColor="#666666"
+                           HorizontalOptions="Center"/>
+                </VerticalStackLayout>
+            </Frame>
+
+            <Label Text="Kontaktuppgifter" 
+                   FontSize="20" 
+                   FontAttributes="Bold" 
+                   TextColor="Black"
+                   HorizontalOptions="Center"
+                   Margin="0,30,0,15"/>
+
+            <VerticalStackLayout Spacing="12" 
+                                 HorizontalOptions="Center">
+                <Label Text="📧 Email: 2ProfessionalDevs@activum.se" 
+                       TextColor="#333333"
+                       FontSize="16"/>
+
+                <Label Text="📞 Telefon: 070-123 45 67" 
+                       TextColor="#333333"
+                       FontSize="16"/>
+            </VerticalStackLayout>
+
+            <BoxView HeightRequest="2" 
+                     Color="#E5E5E5" 
+                     WidthRequest="200"
+                     HorizontalOptions="Center"/>
+
+            <Button Text="Besök hemsida" 
+                    BackgroundColor="#0078D4"
+                    TextColor="White"
+                    CornerRadius="10"
+                    FontSize="16"
+                    FontAttributes="Bold"
+                    WidthRequest="220"
+                    HeightRequest="50"
+                    HorizontalOptions="Center"
+                    />
+
+
+
+           
+            
+            
 
         </VerticalStackLayout>
+    </ScrollView>
 
-        <Label Grid.Row="2"
-               Text="Activum "
-               FontSize="20"
-               FontAttributes="Bold"
-               TextColor="{StaticResource Primary}"
-               HorizontalOptions="End"
-               />
-
-
-
-    </Grid>
 </ContentPage>

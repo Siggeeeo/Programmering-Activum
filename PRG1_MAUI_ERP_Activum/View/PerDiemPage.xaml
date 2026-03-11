@@ -68,8 +68,6 @@
                     BackgroundColor="{StaticResource Tertiary
                     }" 
                     TextColor="{StaticResource White}" 
-                        
-                        
                     Margin="0,20,0,10"/>
 
             </VerticalStackLayout>
