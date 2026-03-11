@@ -2,23 +2,24 @@
 <ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="PRG1_MAUI_ERP_Activum.View.SupportPage"
-             Title="Hjälp &amp; Support">
-    <Grid RowDefinitions="Auto, *" BackgroundColor="{StaticResource White}">
-        <Grid Grid.Row="0" BackgroundColor="{StaticResource Primary}" HeightRequest="80" Padding="20,0">
-            <Label Text="Hjälp Och Support" VerticalOptions="Center" TextColor="{StaticResource White}" FontSize="24" FontAttributes="Bold"/>
+             Title="Hjälp & Support"
+             BackgroundColor="#1E1E2E">
+    <Grid RowDefinitions="Auto, *" Padding="20">
+        <Grid Grid.Row="0" BackgroundColor="#0F3460" HeightRequest="80" Padding="20">
+            <Label Text="Hjälp & Support" VerticalOptions="Center" TextColor="White" FontSize="24" FontAttributes="Bold"/>
         </Grid>
 
-        <ScrollView Grid.Row="1" Padding="20">
-            <VerticalStackLayout Spacing="15">
-                <Label Text="Kontakta IT-avdelningen" FontSize="18" TextColor="{StaticResource Black}" />
-                <Label Text="Beskriv ditt problem nedan." TextColor="{StaticResource Black}"/>
+        <ScrollView Grid.Row="1">
+            <VerticalStackLayout Spacing="15" Padding="20">
+                <Label Text="Kontakta IT-avdelningen" FontSize="18" TextColor="White" />
+                <Label Text="Beskriv ditt problem nedan." TextColor="LightGray"/>
 
-                <Entry Placeholder="Ämne" TextColor="{StaticResource Black}"/>
-                <Editor Placeholder="Beskriv problemet..." HeightRequest="150" BackgroundColor="{StaticResource Gray100}" TextColor="{StaticResource Black}"/>
+                <Entry Placeholder="Ämne" TextColor="White" BackgroundColor="#2A2A3E"/>
+                <Editor Placeholder="Beskriv problemet..." HeightRequest="150" 
+                        BackgroundColor="#2A2A3E" TextColor="White"/>
 
-                <Button Text="Skicka Ärende" BackgroundColor="{StaticResource Tertiary}" TextColor="{StaticResource Black}"/>
+                <Button Text="Skicka Ärende" BackgroundColor="#4299E1" TextColor="White"/>
             </VerticalStackLayout>
         </ScrollView>
     </Grid>
-
 </ContentPage>

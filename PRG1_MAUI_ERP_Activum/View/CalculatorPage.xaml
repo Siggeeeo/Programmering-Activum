@@ -15,12 +15,17 @@
             
             <Label x:Name="LiveInputLabel" Text="" 
                    FontSize="18" TextColor="Gray" 
-                   HorizontalTextAlignment="End"/>
+                   HorizontalTextAlignment="End"
+                   
+                   
+                   />
             
             <Label x:Name="HistoryLabel" Text="" 
                    FontSize="16" TextColor="LightGray" 
                    HorizontalTextAlignment="End" 
-                   BackgroundColor="#2A2A3E" Padding="10"/>
+                   BackgroundColor="#2A2A3E" Padding="10"
+                   
+                   />
             
             
             <Entry x:Name="Display" 

@@ -27,10 +27,13 @@ public partial class CalculatorPage : ContentPage
         {
             if (!currentText.Contains("."))
                 currentText = currentText + ".";
+
+
         }
         else
         {
             currentText = currentText + number;
+
         }
 
         Display.Text = currentText;
@@ -55,6 +58,8 @@ public partial class CalculatorPage : ContentPage
         currentOperation = newOperation;
         lastCalculation = currentText;
         currentText = "0";
+
+
     }
 
     private void OnEqualsClicked(object sender, EventArgs e)
@@ -76,12 +81,13 @@ public partial class CalculatorPage : ContentPage
             {
                 currentText = "Error";
                 Display.Text = "Error";
-                HistoryLabel.Text = "CANNOT DIVIDE BY ZERO!!";
+                HistoryLabel.Text = "CANNOT DIVIDE BY ZERO!!!";
                 LiveInputLabel.Text = " ";
                 currentOperation = " ";
                 return;
             }
             result = firstNumber / secondNumber;
+
         }
 
         currentText = result.ToString();
@@ -89,6 +95,8 @@ public partial class CalculatorPage : ContentPage
         HistoryLabel.Text = firstNumber + " " + currentOperation + " " + secondNumber + " = " + currentText;
         LiveInputLabel.Text = " ";
         currentOperation = " ";
+
+
     }
 
     private void OnClearClicked(object sender, EventArgs e)
@@ -132,6 +140,8 @@ public partial class CalculatorPage : ContentPage
             currentText = currentText + ".";
             Display.Text = currentText;
             LiveInputLabel.Text = currentText;
+
+
         }
     }
 }
