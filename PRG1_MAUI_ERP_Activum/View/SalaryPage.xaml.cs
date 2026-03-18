@@ -39,4 +39,4 @@ private void OnCalculateSalaryClicked(object sender, EventArgs e)
 			ResultLabel.Text = "Fyll i giltliga siffror, max 11 månader för semesterlön";
 		}
 	}
-}
+} 
