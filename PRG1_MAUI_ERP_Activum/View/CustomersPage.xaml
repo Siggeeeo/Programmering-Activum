@@ -2,51 +2,29 @@
 <ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="PRG1_MAUI_ERP_Activum.View.CustomersPage"
-             Title="Kunder">
-    <Grid RowDefinitions="Auto, *" BackgroundColor="{StaticResource Primary}" HeightRequest="100" Padding="25">
+             Title="Kundregister">
+    <VerticalStackLayout Padding="20" Spacing="15">
 
-        <Label Text="Hantera Kunder"
-               VerticalOptions="Center"
-               TextColor="{StaticResource White}"
-               FontSize="25" FontAttributes="Bold"/>
-    </Grid>
+        <SearchBar Placeholder="Sök på namn eller kundtyp (Privat/Företag)"
+                   TextChanged="OnsearchTextChanged"/>
 
-    <ScrollView Grid.Row="1" Padding="25">
-        <VerticalStackLayout Spacing="20">
+        <CollectionView ItemsSource="{Binding Customers}">
+            <CollectionView.ItemTemplate>
+                <DataTemplate>
+                    <Border Margin="0, 0, 0, 10" Padding="15" BackgroundColor="White">
+                        <VerticalStackLayout Spacing="5">
 
-            <Label Text="Registrera ny kund" FontSize="20" TextColor="{StaticResource Primary}" FontAttributes="Bold"/>
+                            <Label Text="{Binding FullName}" FontAttributes="Bold" FontSize="18" TextColor="Black"/>
 
-            <Grid ColumnDefinitions="*,*" ColumnSpacing="10">
-                <Entry Grid.Column="0" Placeholder="Förnamn"/>
-                <Entry Grid.Column="1" Placeholder="Efternamn"/>
-            </Grid>
+                            <Label Text="{Binding Email}" TextColor="Gray" FontSize="14"/>
+                            <Label Text="{Binding CustomerType}" TextColor="Blue" FontSize="14"/>
 
-            <Entry Placeholder="E-Postadress" Keyboard="Email"/>
-            <Entry Placeholder="Telefonnummer" Keyboard="Telephone"/>
 
-            <Label Text="Födelsedatum" TextColor="{StaticResource Gray500}"/>
-            <DatePicker />
+                        </VerticalStackLayout>
+                    </Border>
+                </DataTemplate>
+            </CollectionView.ItemTemplate>
+        </CollectionView>
 
-            <Label Text="Kundtyp:" TextColor="{StaticResource Gray500}"/>
-            <Picker Title="Välj Kundtyp">
-            <Picker.ItemsSource>
-                <x:array Type="{x:Type x:String}">
-                    <x:String>Privatkund</x:String>
-                    <x:String>Företagskund</x:String>
-                    <x:String>Nyckelkund</x:String>
-                </x:array>
-            </Picker.ItemsSource>
-            </Picker>
-
-            <Button Text="Spara Kund"
-                    BackgroundColor="{StaticResource Tertiary}"
-                    TextColor="{StaticResource White}"
-                    CornerRadius="10"
-                    HeightRequest="50"
-                    Margin="0,20,0,0"/>
-        </VerticalStackLayout>
-        
-        
-    </ScrollView>
-      
+    </VerticalStackLayout>
 </ContentPage>
