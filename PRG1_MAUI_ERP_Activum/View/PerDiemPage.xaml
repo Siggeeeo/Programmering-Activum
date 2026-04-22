@@ -2,14 +2,55 @@
 <ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="PRG1_MAUI_ERP_Activum.View.PerDiemPage"
-             Title="Traktamenten">
-    <VerticalStackLayout>
-        <Label 
-            Padding="20"
-            Text="Traktamenten"
-            Style="{StaticResource Headline}"
-            SemanticProperties.HeadingLevel="Level1"
-            VerticalOptions="Center" 
-            HorizontalOptions="Center" />
-    </VerticalStackLayout>
-</ContentPage>
+             BackgroundColor= "{StaticResource PageBackground}"
+             Title="Traktamente">
+
+
+        <Grid RowDefinitions="Auto,*">
+
+            <Grid Grid.Row="0" BackgroundColor="{StaticResource ActivumBlueGreen}" HeightRequest="80" Padding="20">
+                <Label Text="Traktamente" VerticalOptions="Center" TextColor="{StaticResource ActivumWhite}" FontSize="24" FontAttributes="Bold" />
+            </Grid>
+
+            <ScrollView Grid.Row="1" Padding="20">
+                <VerticalStackLayout Spacing="15">
+
+                    <Label Text="Beräkna reseräkning" FontSize="20" TextColor="{StaticResource PrimaryText}"/>
+
+                    <Label Text="Resmål" TextColor="{StaticResource SecondaryText}"/>
+                    <Entry x:Name="DestinationEntry" Placeholder="T.ex. Stockholm" TextColor="{StaticResource PrimaryText}"/>
+
+                    <Grid ColumnDefinitions="*,*" ColumnSpacing="15">
+                        <VerticalStackLayout Grid.Column="0">
+                            <Label Text="Avresa:" TextColor="{StaticResource SecondaryText}"/>
+                            <DatePicker x:Name="DepartureDatePicker" TextColor="{StaticResource PrimaryText}"/>
+                        </VerticalStackLayout>
+                        <VerticalStackLayout Grid.Column="1">
+                            <Label Text="Hemkomst:" TextColor="{StaticResource SecondaryText}"/>
+                            <DatePicker x:Name="ReturnDatePicker" TextColor="{StaticResource PrimaryText}"/>
+                        </VerticalStackLayout>
+                    </Grid>
+
+                    <StackLayout Orientation="Horizontal" Spacing="10" VerticalOptions="Center">
+                        <CheckBox x:Name="HalfDayCheckBox" Color="{StaticResource ActivumBlueGreen}"/>
+                        <Label Text="Sista dagen är en halvdag" VerticalOptions="Center" TextColor="{StaticResource PrimaryText}"/>
+                    </StackLayout>
+
+                    <Label Text="Egna utlägg (kr):" TextColor="{StaticResource SecondaryText}"/>
+                    <Entry x:Name="ExpensesEntry" Keyboard="Numeric" Placeholder="0" TextColor="{StaticResource PrimaryText}"/>
+
+                    <Button Text="Beräkna Traktamente" BackgroundColor="{StaticResource ActivumBlueGreen}" TextColor="{StaticResource ActivumWhite}" Clicked="OnCalculatePerDiemClicked" Margin="0,10,0,0"/>
+
+                    <Frame BackgroundColor="{StaticResource ActivumBlueGreen}" Padding="15" Margin="0,25,0,0" CornerRadius="8" HasShadow="False">
+                        <Label x:Name="ResultLabel" Text="Fyll i formuläret för att beräkna." TextColor="{StaticResource ActivumWhite}" FontSize="18"/>
+                    </Frame>
+
+                </VerticalStackLayout>
+            </ScrollView>
+
+        </Grid>
+    </ContentPage>
+
+
+
+
