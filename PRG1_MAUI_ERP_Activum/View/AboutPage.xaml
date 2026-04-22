@@ -2,44 +2,57 @@
 <ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="PRG1_MAUI_ERP_Activum.View.AboutPage"
-             Title="Om Macrosoft">
-    <Grid RowDefinitions="Auto, *, Auto" Padding="20" BackgroundColor="{StaticResource PageBackground}">
+             Title="Om Appen">
 
+    <Grid RowDefinitions="Auto, *, Auto" Padding="20" BackgroundColor="{StaticResource White}">
 
-        <VerticalStackLayout Grid.Row="0" Spacing="10">
-            <Label Text="Välkommen"
+        <VerticalStackLayout Grid.Row="0" Spacing="10" Margin="0,0,0,20">
+            <Label Text="Om Activum"
                    FontSize="32"
                    FontAttributes="Bold"
                    TextColor="{StaticResource Primary}"
                    HorizontalOptions="Center"/>
             <BoxView HeightRequest="2"
-             Color="{StaticResource Primary}"
-             WidthRequest="200"/>
+                     Color="{StaticResource Primary}"
+                     WidthRequest="150"
+                     HorizontalOptions="Center"/>
         </VerticalStackLayout>
 
-        <VerticalStackLayout Grid.Row="1" Spacing="25" VerticalOptions="Center">
-            <Label Text="Välkommen till Activum"
-                   FontSize="20"
-                   FontAttributes="Bold"
-                   HorizontalOptions="Center"
-                   TextColor="{StaticResource TextSecondary}"/>
+        <ScrollView Grid.Row="1">
+            <VerticalStackLayout Spacing="25" VerticalOptions="Center">
 
-            <Label Text="Din app för smidig hantering av försäkringar, traktamenten och lönerapportering."
-                   HorizontalTextAlignment="Center"
-                   FontSize="15"
-                   TextColor="{StaticResource TextPrimary}"/>
+                <Label Text="Din plattform för smidig hantering av försäkringar, traktamenten och lönerapportering."
+                       HorizontalTextAlignment="Center"
+                       FontSize="16"
+                       LineHeight="1.2"
+                       TextColor="{StaticResource Black}"/>
 
+                <VerticalStackLayout Spacing="5" Margin="0, 20, 0, 0">
+                    <Label Text="Utvecklad av:"
+                           HorizontalTextAlignment="Center"
+                           FontSize="14"
+                           TextColor="{StaticResource Black}"/>
+
+                    <Label Text="Kristian &amp; Sigge"
+                           HorizontalTextAlignment="Center"
+                           FontSize="20"
+                           FontAttributes="Bold"
+                           TextColor="{StaticResource Primary}"/>
+                </VerticalStackLayout>
+
+            </VerticalStackLayout>
+        </ScrollView>
+
+        <VerticalStackLayout Grid.Row="2" Spacing="2" HorizontalOptions="Center">
+            <Label Text="Version 1.0.0"
+                   FontSize="12"
+                   TextColor="{StaticResource Black}"
+                   HorizontalOptions="Center"/>
+            <Label Text="© 2026 Activum Försäkring AB"
+                   FontSize="12"
+                   TextColor="{StaticResource TextSecondary}"
+                   HorizontalOptions="Center"/>
         </VerticalStackLayout>
-
-        <Label Grid.Row="2"
-               Text="Activum "
-               FontSize="20"
-               FontAttributes="Bold"
-               TextColor="{StaticResource Primary}"
-               HorizontalOptions="End"
-               />
-
-
 
     </Grid>
 </ContentPage>

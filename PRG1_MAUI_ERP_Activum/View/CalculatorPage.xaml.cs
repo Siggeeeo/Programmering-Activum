@@ -109,4 +109,4 @@ public partial class CalculatorPage : ContentPage
         EntryCalculations.Text = "Kommande funktion";
     }
 
-}
+}   
