@@ -18,19 +18,22 @@ public partial class CustomersPage : ContentPage
 
     private void OnAddCustomerClicked(object sender, EventArgs e)
     {
-        if (!string.IsNullOrWhiteSpace(CustomerNameEntry.Text) &&  !string.IsNullOrWhiteSpace(CustomerEmailEntry.Text))
+
+        string customerName = customerNameEntry.Text;
+        string customerEmail = customerEmailEntry.Text;
+        if (!string.IsNullOrWhiteSpace(customerName) &&  !string.IsNullOrWhiteSpace(customerEmail))
 
         {
             _viewModel.AddCustomer(new Customer
             {
-                FirstName = CustomerNameEntry.Text,
-                Email = CustomerEmailEntry.Text,
+                FirstName = customerName,
+                Email = customerEmail,
                 CustomerType = "Företag"
             });
 
-            CustomerNameEntry.Text = string.Empty;
-            CustomerEmailEntry.Text = string.Empty;
-            CustomerNameEntry.Focus();
+            customerNameEntry.Text = string.Empty;
+            customerEmailEntry.Text = string.Empty;
+            customerNameEntry.Focus();
             
         }
     }
