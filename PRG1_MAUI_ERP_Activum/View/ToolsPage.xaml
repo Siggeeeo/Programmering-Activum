@@ -7,16 +7,26 @@
     <Grid RowDefinitions="Auto, *, Auto" Padding="25" BackgroundColor="{StaticResource PageBackground}">
 
         <VerticalStackLayout Grid.Row="0" Spacing="10">
-            <Label Text="Verktyg" FontSize="25" FontAttributes="Bold" TextColor="{StaticResource Primary}" HorizontalOptions="Center" />
-            <BoxView HeightRequest="3" Color="{StaticResource Primary}" WidthRequest="200"/>
+            <Label Text="Verktyg" FontSize="25" FontAttributes="Bold" 
+                   FontFamily="Verdana" TextColor="{StaticResource ActivumBlueGreen}" HorizontalOptions="Center" />
+            <BoxView HeightRequest="3" Color="{StaticResource ActivumBlueGreen}" WidthRequest="200" HorizontalOptions="Center"/>
         </VerticalStackLayout>
 
         <VerticalStackLayout Grid.Row="1" Spacing="20" VerticalOptions="Center">
-            <Button Text="Kalkylator" Clicked="OnCalcClicked" BackgroundColor="{StaticResource Primary}" TextColor="White" HeightRequest="50" CornerRadius="10" FontAttributes="Bold"/>
-            <Button Text="Traktamente" Clicked="OnPerDiemClicked" BackgroundColor="{StaticResource Primary}" TextColor="White" HeightRequest="50" CornerRadius="10" FontAttributes="Bold"/>
-            <Button Text="Lön" Clicked="OnSalaryClicked" BackgroundColor="{StaticResource Primary}" TextColor="White" HeightRequest="50" CornerRadius="10" FontAttributes="Bold"/>
+            <Button Text="Kalkylator" Clicked="OnCalcClicked" 
+                    BackgroundColor="{StaticResource ActivumBlueGreen}" TextColor="White" 
+                    HeightRequest="50" CornerRadius="10" FontFamily="Verdana" FontAttributes="Bold"/>
+
+            <Button Text="Traktamente" Clicked="OnPerDiemClicked" FontFamily="Verdana"
+                    BackgroundColor="{StaticResource ActivumBlueGreen}" TextColor="White" 
+                    HeightRequest="50" CornerRadius="10" FontAttributes="Bold"/>
+
+            <Button Text="Lön" Clicked="OnSalaryClicked" BackgroundColor="{StaticResource ActivumBlueGreen}" 
+                    TextColor="White" HeightRequest="50" CornerRadius="10" 
+                    FontAttributes="Bold" FontFamily="Verdana"/>
         </VerticalStackLayout>
 
-        <Label Grid.Row="2" Text="Activum" FontSize="20" FontAttributes="Bold" TextColor="{StaticResource Primary}" HorizontalOptions="End"/>
+        <Label Grid.Row="2" Text="Activum" FontSize="20" FontAttributes="Bold" 
+               FontFamily="Verdana" TextColor="{StaticResource ActivumBlueGreen}" HorizontalOptions="End"/>
     </Grid>
 </ContentPage>

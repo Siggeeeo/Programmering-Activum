@@ -10,6 +10,7 @@
             <Setter Property="FontSize" Value="24" />
             <Setter Property="CornerRadius" Value="8" />
             <Setter Property="HeightRequest" Value="70" />
+            <Setter Property="FontFamily" Value="Verdana" />
         </Style>
     </ContentPage.Resources>
 
@@ -22,6 +23,7 @@
             <Label x:Name="DisplayLabel" 
                    Text="0" 
                    FontSize="50" 
+                   FontFamily="Verdana"
                    HorizontalTextAlignment="End" 
                    TextColor="{StaticResource PrimaryText}"/>
         </Frame>
@@ -31,25 +33,25 @@
               RowSpacing="10" 
               ColumnSpacing="10">
 
-            <Button Text="7" Grid.Row="0" Grid.Column="0" Clicked="OnNumberClicked" BackgroundColor="{StaticResource Gray500}" TextColor="{StaticResource PrimaryText}"/>
-            <Button Text="8" Grid.Row="0" Grid.Column="1" Clicked="OnNumberClicked" BackgroundColor="{StaticResource Gray500}" TextColor="{StaticResource PrimaryText}"/>
-            <Button Text="9" Grid.Row="0" Grid.Column="2" Clicked="OnNumberClicked" BackgroundColor="{StaticResource Gray500}" TextColor="{StaticResource PrimaryText}"/>
-            <Button Text="/" Grid.Row="0" Grid.Column="3" Clicked="OnOperatorClicked" BackgroundColor="{StaticResource ActivumBlueGreen}" TextColor="White" />
+            <Button Text="7" Grid.Row="0" Grid.Column="0" Clicked="OnNumberClicked" FontFamily="Verdana" BackgroundColor="{StaticResource Gray500}" TextColor="{StaticResource PrimaryText}"/>
+            <Button Text="8" Grid.Row="0" Grid.Column="1" FontFamily="Verdana" Clicked="OnNumberClicked" BackgroundColor="{StaticResource Gray500}" TextColor="{StaticResource PrimaryText}"/>
+            <Button Text="9" Grid.Row="0" Grid.Column="2" Clicked="OnNumberClicked" BackgroundColor="{StaticResource Gray500}" TextColor="{StaticResource PrimaryText}" FontFamily="Verdana"/>
+            <Button Text="/" Grid.Row="0" Grid.Column="3" Clicked="OnOperatorClicked" BackgroundColor="{StaticResource ActivumBlueGreen}" TextColor="White" FontFamily="Verdana" />
 
-            <Button Text="4" Grid.Row="1" Grid.Column="0" Clicked="OnNumberClicked" BackgroundColor="{StaticResource Gray500}" TextColor="{StaticResource PrimaryText}"/>
-            <Button Text="5" Grid.Row="1" Grid.Column="1" Clicked="OnNumberClicked" BackgroundColor="{StaticResource Gray500}" TextColor="{StaticResource PrimaryText}"/>
-            <Button Text="6" Grid.Row="1" Grid.Column="2" Clicked="OnNumberClicked" BackgroundColor="{StaticResource Gray500}" TextColor="{StaticResource PrimaryText}"/>
-            <Button Text="x" Grid.Row="1" Grid.Column="3" Clicked="OnOperatorClicked" BackgroundColor="{StaticResource ActivumBlueGreen}" TextColor="White" />
+            <Button Text="4" Grid.Row="1" Grid.Column="0" Clicked="OnNumberClicked" BackgroundColor="{StaticResource Gray500}" FontFamily="Verdana" TextColor="{StaticResource PrimaryText}"/>
+            <Button Text="5" Grid.Row="1" Grid.Column="1" Clicked="OnNumberClicked" BackgroundColor="{StaticResource Gray500}" TextColor="{StaticResource PrimaryText}" FontFamily="Verdana"/>
+            <Button Text="6" Grid.Row="1" Grid.Column="2" FontFamily="Verdana" Clicked="OnNumberClicked" BackgroundColor="{StaticResource Gray500}" TextColor="{StaticResource PrimaryText}"/>
+            <Button Text="x" Grid.Row="1" Grid.Column="3" Clicked="OnOperatorClicked" BackgroundColor="{StaticResource ActivumBlueGreen}" TextColor="White" FontFamily="Verdana" />
 
-            <Button Text="1" Grid.Row="2" Grid.Column="0" Clicked="OnNumberClicked" BackgroundColor="{StaticResource Gray500}" TextColor="{StaticResource PrimaryText}"/>
-            <Button Text="2" Grid.Row="2" Grid.Column="1" Clicked="OnNumberClicked" BackgroundColor="{StaticResource Gray500}" TextColor="{StaticResource PrimaryText}"/>
-            <Button Text="3" Grid.Row="2" Grid.Column="2" Clicked="OnNumberClicked" BackgroundColor="{StaticResource Gray500}" TextColor="{StaticResource PrimaryText}"/>
-            <Button Text="-" Grid.Row="2" Grid.Column="3" Clicked="OnOperatorClicked" BackgroundColor="{StaticResource ActivumBlueGreen}" TextColor="White" />
+            <Button Text="1" Grid.Row="2" Grid.Column="0" Clicked="OnNumberClicked" BackgroundColor="{StaticResource Gray500}" TextColor="{StaticResource PrimaryText}" FontFamily="Verdana"/>
+            <Button Text="2" Grid.Row="2" Grid.Column="1" FontFamily="Verdana" Clicked="OnNumberClicked" BackgroundColor="{StaticResource Gray500}" TextColor="{StaticResource PrimaryText}"/>
+            <Button Text="3" Grid.Row="2" Grid.Column="2" Clicked="OnNumberClicked" BackgroundColor="{StaticResource Gray500}" FontFamily="Verdana" TextColor="{StaticResource PrimaryText}"/>
+            <Button Text="-" Grid.Row="2" Grid.Column="3" Clicked="OnOperatorClicked" BackgroundColor="{StaticResource ActivumBlueGreen}" TextColor="White" FontFamily="Verdana" />
 
-            <Button Text="X" Grid.Row="3" Grid.Column="0" Clicked="OnClearClicked" BackgroundColor="{StaticResource ActivumBlack}" TextColor="White"/>
-            <Button Text="0" Grid.Row="3" Grid.Column="1" Clicked="OnNumberClicked" BackgroundColor="{StaticResource Gray500}" TextColor="{StaticResource PrimaryText}"/>
-            <Button Text="=" Grid.Row="3" Grid.Column="2" Clicked="OnCalculateClicked" BackgroundColor="{StaticResource ActivumBlueGreen}" TextColor="White"/>
-            <Button Text="+" Grid.Row="3" Grid.Column="3" Clicked="OnOperatorClicked" BackgroundColor="{StaticResource ActivumBlueGreen}" TextColor="White"/>
+            <Button Text="X" Grid.Row="3" Grid.Column="0" Clicked="OnClearClicked" BackgroundColor="{StaticResource ActivumBlack}" TextColor="White" FontFamily="Verdana"/>
+            <Button Text="0" Grid.Row="3" Grid.Column="1" Clicked="OnNumberClicked" BackgroundColor="{StaticResource Gray500}" FontFamily="Verdana" TextColor="{StaticResource PrimaryText}"/>
+            <Button Text="=" Grid.Row="3" Grid.Column="2" Clicked="OnCalculateClicked" BackgroundColor="{StaticResource ActivumBlueGreen}" TextColor="White" FontFamily="Verdana"/>
+            <Button Text="+" Grid.Row="3" Grid.Column="3" Clicked="OnOperatorClicked" BackgroundColor="{StaticResource ActivumBlueGreen}" FontFamily="Verdana" TextColor="White"/>
         </Grid>
 
     </VerticalStackLayout>

@@ -4,16 +4,23 @@
              x:Class="PRG1_MAUI_ERP_Activum.View.SupportPage"
              Title="Support">
 
-    <Grid RowDefinitions="Auto, *, Auto" Padding="20" BackgroundColor="{StaticResource White}">
+    <ContentPage.Resources>
+        <Color x:Key="ActivumBlack">#000000</Color>
+        <Color x:Key="ActivumWhite">#FFFFFF</Color>
+        <Color x:Key="ActivumGray">#666666</Color>
+        <Color x:Key="ActivumBlueGreen">#134f5c</Color>
+    </ContentPage.Resources>
+
+    <Grid RowDefinitions="Auto, *, Auto" Padding="20" BackgroundColor="{StaticResource ActivumWhite}">
 
         <VerticalStackLayout Grid.Row="0" Spacing="10" Margin="0,0,0,20">
             <Label Text="Hjälp och Support"
                    FontSize="32"
                    FontAttributes="Bold"
-                   TextColor="{StaticResource Primary}"
-                   HorizontalOptions="Center"/>
+                   TextColor="{StaticResource ActivumBlueGreen}"
+                   HorizontalOptions="Center" FontFamily="Verdana" />
             <BoxView HeightRequest="2"
-                     Color="{StaticResource Primary}"
+                     Color="{StaticResource ActivumBlueGreen}"
                      WidthRequest="150"
                      HorizontalOptions="Center"/>
         </VerticalStackLayout>
@@ -22,30 +29,33 @@
             <VerticalStackLayout Spacing="20" Padding="10">
                 <Label Text="Har du stött på ett problem? Kontakta vår IT support så hjälper vi dig så snabbt som möjligt"
                        HorizontalTextAlignment="Center"
-                       FontSize="16"
-                       TextColor="{StaticResource Black}"
+                       FontSize="16" FontFamily="Verdana"
+                       TextColor="{StaticResource ActivumBlack}"
                        Margin="0,0,0,10"/>
 
                 <VerticalStackLayout Spacing="8">
-                    <Label Text="Ämne" FontSize="14" TextColor="{StaticResource Primary}" FontAttributes="Bold" />
+                    <Label Text="Ämne" FontSize="14" TextColor="{StaticResource ActivumBlueGreen}" FontAttributes="Bold" 
+                           FontFamily="Verdana" />
                     <Entry Placeholder="Vad gäller ärendet?" 
                            BackgroundColor="#F5F5F5" 
-                           TextColor="{StaticResource Black}"/>
+                           TextColor="{StaticResource ActivumBlack}" FontFamily="Verdana" />
                 </VerticalStackLayout>
 
                 <VerticalStackLayout Spacing="8">
-                    <Label Text="Meddelande" FontSize="14" TextColor="{StaticResource Primary}" FontAttributes="Bold" />
+                    <Label Text="Meddelande" FontSize="14" FontFamily="Verdana" TextColor="{StaticResource ActivumBlueGreen}" FontAttributes="Bold" />
                     <Editor Placeholder="Beskriv problemet här" 
                             HeightRequest="150" 
                             BackgroundColor="#F5F5F5" 
-                            TextColor="{StaticResource Black}"/>
+                            TextColor="{StaticResource ActivumBlack}"
+                            FontFamily="Verdana" />
                 </VerticalStackLayout>
 
                 <Button Text="Skicka Ärende" 
-                        BackgroundColor="{StaticResource Primary}" 
+                        BackgroundColor="{StaticResource ActivumBlueGreen}" 
                         TextColor="White" 
                         CornerRadius="10"
                         HeightRequest="50"
+                        FontFamily="Verdana"
                         Margin="0,10,0,0"/>
             </VerticalStackLayout>
         </ScrollView>
@@ -53,13 +63,13 @@
         <VerticalStackLayout Grid.Row="2" Spacing="2" Margin="0,10,0,5" HorizontalOptions="Center">
             <Label Text="IT-avdelningen: support@activum.se"
                    FontSize="12"
-                   TextColor="{StaticResource Black}"
-                   HorizontalOptions="Center"/>
+                   TextColor="{StaticResource ActivumBlack}"
+                   HorizontalOptions="Center" FontFamily="Verdana" />
             <Label Text="Öppet vardagar 08:00 - 17:00"
-                   FontSize="12"
-                   TextColor="{StaticResource Black}" 
+                   FontSize="12" FontFamily="Verdana"
+                   TextColor="{StaticResource ActivumGray}" 
                    HorizontalOptions="Center"/>
-            
+
         </VerticalStackLayout>
 
     </Grid>

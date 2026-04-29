@@ -2,43 +2,71 @@
 <ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="PRG1_MAUI_ERP_Activum.View.CustomersPage"
-             BackgroundColor="{StaticResource PageBackground}"
+             BackgroundColor="{StaticResource ActivumWhite}"
              Title="Kunder">
 
+    <ContentPage.Resources>
+        <Color x:Key="ActivumBlack">#000000</Color>
+        <Color x:Key="ActivumWhite">#FFFFFF</Color>
+        <Color x:Key="ActivumGray">#666666</Color>
+        <Color x:Key="ActivumBlueGreen">#134f5c</Color>
+
+        <Color x:Key="SecondaryText">#666666</Color>
+    </ContentPage.Resources>
+
+
     <Grid RowDefinitions="80, Auto, *">
-        <BoxView  Grid.Row="0" BackgroundColor="{StaticResource ActivumBlueGreen}"/>
-        <Label Grid.Row="0" Text="Kundregister" VerticalOptions="Center"  Margin="20" TextColor="{StaticResource ActivumWhite}" FontSize="25"></Label>
+        <BoxView Grid.Row="0" BackgroundColor="{StaticResource ActivumBlueGreen}"/>
+
+        <Label Grid.Row="0" Text="Kundregister" VerticalOptions="Center" 
+               FontAttributes="Bold" Margin="20" TextColor="{StaticResource ActivumWhite}" 
+               FontSize="25" FontFamily="Verdana"></Label>
 
 
         <Border Grid.Row="1" Margin="20 " Padding="20" StrokeThickness="0">
             <VerticalStackLayout Spacing="10">
-                <Label Text="Lägg till ny kund" TextColor="{StaticResource ActivumBlueGreen}"></Label>
-                <Entry x:Name="customerNameEntry" Placeholder="Företagsnamn / Kundnamn" TextColor="{StaticResource ActivumBlack}"></Entry>
-                <Entry x:Name="customerEmailEntry" Placeholder="E-Postadress" Keyboard="Email" TextColor="{StaticResource ActivumBlack}"></Entry>
+                <Label Text="Lägg till ny kund" FontAttributes="Bold" 
+                       TextColor="{StaticResource ActivumBlueGreen}" FontFamily="Verdana"></Label>
+
+                <Entry x:Name="customerNameEntry" Placeholder="Företagsnamn / Kundnamn" 
+                       TextColor="{StaticResource ActivumBlack}" FontFamily="Verdana"></Entry>
+
+                <Entry x:Name="customerEmailEntry" FontFamily="Verdana" 
+                       Placeholder="E-Postadress" Keyboard="Email" 
+                       TextColor="{StaticResource ActivumBlack}"></Entry>
+
                 <Button Text="Spara Kund"
                         BackgroundColor="{StaticResource ActivumBlueGreen}"
                         TextColor="{StaticResource ActivumWhite}"
-                        Clicked="OnAddCustomerClicked"></Button>
+                        Clicked="OnAddCustomerClicked"
+                        FontAttributes="Bold"
+                        FontFamily="Verdana"></Button>
             </VerticalStackLayout>
         </Border>
 
         <CollectionView Grid.Row="2" x:Name="CustomerListView" Margin="20">
             <CollectionView.Header>
-                <Label Text="Aktiva Kunder" FontSize="18" Margin="0,10,0,15"></Label>
+                <Label Text="Aktiva Kunder" FontSize="18" Margin="0,10,0,15" 
+                       FontFamily="Verdana" FontAttributes="Bold"></Label>
             </CollectionView.Header>
+
             <CollectionView.ItemTemplate>
                 <DataTemplate>
                     <Border Margin="0,0,0,12" Padding="15" BackgroundColor="{StaticResource ActivumWhite}" StrokeThickness="0" >
-                        
-                            <VerticalStackLayout>
-                                <Label Text="{Binding FirstName}" FontSize="16" TextColor="{StaticResource ActivumBlack}"></Label>
-                                <Label Text="{Binding Email}" FontSize="13" TextColor="{StaticResource SecondaryText}"></Label>
-                            </VerticalStackLayout>
-                        
+
+                        <VerticalStackLayout>
+                            <Label Text="{Binding FirstName}" FontSize="16" 
+                                       TextColor="{StaticResource ActivumBlack}" 
+                                       FontAttributes="Bold" FontFamily="Verdana"></Label>
+
+                            <Label Text="{Binding Email}" FontFamily="Verdana" 
+                                       FontSize="13" TextColor="{StaticResource ActivumGray}"></Label>
+                        </VerticalStackLayout>
+
                     </Border>
                 </DataTemplate>
             </CollectionView.ItemTemplate>
         </CollectionView>
     </Grid>
-    
+
 </ContentPage>
