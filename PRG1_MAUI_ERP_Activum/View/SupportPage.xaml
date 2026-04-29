@@ -35,7 +35,7 @@
 
                 <VerticalStackLayout Spacing="8">
                     <Label Text="Meddelande" FontSize="14" TextColor="{StaticResource Primary}" FontAttributes="Bold" />
-                    <Editor Placeholder="Beskriv problemet här..." 
+                    <Editor Placeholder="Beskriv problemet här" 
                             HeightRequest="150" 
                             BackgroundColor="#F5F5F5" 
                             TextColor="{StaticResource Black}"/>
@@ -59,6 +59,7 @@
                    FontSize="12"
                    TextColor="{StaticResource Black}" 
                    HorizontalOptions="Center"/>
+            
         </VerticalStackLayout>
 
     </Grid>

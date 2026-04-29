@@ -3,16 +3,26 @@
              x:Class="PRG1_MAUI_ERP_Activum.View.AboutPage"
              Title="Om Appen">
 
-    <Grid RowDefinitions="Auto, *, Auto" Padding="20" BackgroundColor="{StaticResource White}">
+    <ContentPage.Resources>
+        <Color x:Key="ActivumBlack">#000000</Color>
+        <Color x:Key="ActivumWhite">#FFFFFF</Color>
+        <Color x:Key="ActivumGray">#666666</Color>
+        <Color x:Key="ActivumBlueGreen">#134f5c</Color>
+    </ContentPage.Resources>
+
+    <Grid RowDefinitions="Auto, *, Auto" Padding="20" BackgroundColor="{StaticResource ActivumWhite}">
 
         <VerticalStackLayout Grid.Row="0" Spacing="10" Margin="0,0,0,20">
             <Label Text="Om Activum"
                    FontSize="32"
                    FontAttributes="Bold"
-                   TextColor="{StaticResource Primary}"
-                   HorizontalOptions="Center"/>
+                   TextColor="{StaticResource ActivumBlueGreen}"
+                   FontFamily="Verdana"
+                   HorizontalOptions="Center"
+                   
+                   />
             <BoxView HeightRequest="2"
-                     Color="{StaticResource Primary}"
+                     Color="{StaticResource ActivumBlueGreen}"
                      WidthRequest="150"
                      HorizontalOptions="Center"/>
         </VerticalStackLayout>
@@ -22,21 +32,28 @@
 
                 <Label Text="Din plattform för smidig hantering av försäkringar, traktamenten och lönerapportering."
                        HorizontalTextAlignment="Center"
+                       FontFamily="Verdana"
                        FontSize="16"
-                       LineHeight="1.2"
-                       TextColor="{StaticResource Black}"/>
+                       TextColor="{StaticResource ActivumBlack}"/>
 
                 <VerticalStackLayout Spacing="5" Margin="0, 20, 0, 0">
                     <Label Text="Utvecklad av:"
                            HorizontalTextAlignment="Center"
+                          
                            FontSize="14"
-                           TextColor="{StaticResource Black}"/>
+                           TextColor="{StaticResource ActivumBlack}"
+                           FontFamily="Verdana"
+                           
+                           />
 
                     <Label Text="Kristian &amp; Sigge"
                            HorizontalTextAlignment="Center"
+                           
                            FontSize="20"
                            FontAttributes="Bold"
-                           TextColor="{StaticResource Primary}"/>
+                           TextColor="{StaticResource ActivumBlueGreen}"
+                           FontFamily="Verdana"
+                           />
                 </VerticalStackLayout>
 
             </VerticalStackLayout>
@@ -45,12 +62,16 @@
         <VerticalStackLayout Grid.Row="2" Spacing="2" HorizontalOptions="Center">
             <Label Text="Version 1.0.0"
                    FontSize="12"
-                   TextColor="{StaticResource Black}"
-                   HorizontalOptions="Center"/>
-            <Label Text="© 2026 Activum Försäkring AB"
+                   TextColor="{StaticResource ActivumBlack}"
+                   HorizontalOptions="Center"
+                   FontFamily="Verdana"
+                   />
+            <Label Text="© 2026 ACTIVUM Försäkring AB"
                    FontSize="12"
-                   TextColor="{StaticResource TextSecondary}"
-                   HorizontalOptions="Center"/>
+                   TextColor="{StaticResource ActivumGray}"
+                   HorizontalOptions="Center"
+                   FontFamily="Verdana"
+                   />
         </VerticalStackLayout>
 
     </Grid>

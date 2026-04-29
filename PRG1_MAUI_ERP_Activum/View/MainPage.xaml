@@ -4,45 +4,73 @@
              xmlns:sys="clr-namespace:System;assembly=netstandard"
              x:Class="PRG1_MAUI_ERP_Activum.View.MainPage"
              Title="Hem"
-             BackgroundColor="White">
+             BackgroundColor="{StaticResource ActivumWhite}">
+
+    <ContentPage.Resources>
+        <ResourceDictionary>
+            <Color x:Key="ActivumBlack">#000000</Color>
+            <Color x:Key="ActivumWhite">#FFFFFF</Color>
+            <Color x:Key="ActivumGray">#666666</Color>
+            <Color x:Key="ActivumBlueGreen">#134f5c</Color>
+        </ResourceDictionary>
+    </ContentPage.Resources>
 
     <ScrollView>
         <VerticalStackLayout Spacing="25" Padding="20">
-            <Label Text="Välkommen till Activum"
-                   FontSize="30"
-                   HorizontalOptions="Center"
-                   TextColor="{StaticResource ActivumBlueGreen}"
-                   Margin="0,20,0,10"></Label>
+
+            <Label HorizontalOptions="Center" Margin="0,20,0,10">
+                <Label.FormattedText>
+                    <FormattedString>
+                        <Span Text="Välkommen till " 
+                              FontSize="30" 
+                              FontFamily="Verdana" 
+                              TextColor="{StaticResource ActivumBlueGreen}" />
+                        <Span Text="ACTIVUM" 
+                              FontSize="30" 
+                              FontFamily="Nunito" 
+                              TextColor="{StaticResource ActivumBlueGreen}" />
+                    </FormattedString>
+                </Label.FormattedText>
+            </Label>
 
             <Label Text="Välj ett val nedan för att starta"
                    FontSize="17"
+                   FontFamily="Verdana"
                    HorizontalOptions="Center"
-                   TextColor="{StaticResource SecondaryText}"></Label>
+                   TextColor="{StaticResource ActivumGray}"></Label>
 
             <Grid ColumnDefinitions="*,*" RowDefinitions="100, 100" RowSpacing="15" ColumnSpacing="15" Margin="0,20,0,0">
 
                 <Button Grid.Row="0" Grid.Column="0"
                         Text="Kunder"
                         FontSize="17"
-                        BackgroundColor="{StaticResource ActivumBlueGreen}" TextColor="{StaticResource ActivumWhite}"
+                        FontFamily="Verdana"
+                        BackgroundColor="{StaticResource ActivumBlueGreen}" 
+                        TextColor="{StaticResource ActivumWhite}"
                         Clicked="OnNavigateToCustomers"></Button>
 
                 <Button Grid.Row="0" Grid.Column="1"
                         Text="Försäkringar"
                         FontSize="17"
-                        BackgroundColor="{StaticResource ActivumBlueGreen}" TextColor="{StaticResource ActivumWhite}"
+                        FontFamily="Verdana"
+                        BackgroundColor="{StaticResource ActivumBlueGreen}" 
+                        TextColor="{StaticResource ActivumWhite}"
                         Clicked="OnNavigateToInsurance"></Button>
-                
+
                 <Button Grid.Row="1" Grid.Column="0"
                         Text="Traktamente"
                         FontSize="17"
-                        BackgroundColor="{StaticResource ActivumBlueGreen}" TextColor="{StaticResource ActivumWhite}"
+                        FontFamily="Verdana"
+                        BackgroundColor="{StaticResource ActivumBlueGreen}" 
+                        TextColor="{StaticResource ActivumWhite}"
                         Clicked="OnNavigateToPerDiem"></Button>
-                
+
                 <Button Grid.Row="1" Grid.Column="1"
                         Text="Lön och Bonus"
                         FontSize="17"
-                        BackgroundColor="{StaticResource ActivumBlueGreen}" TextColor="{StaticResource ActivumWhite}"
+                        FontFamily="Verdana"
+                        BackgroundColor="{StaticResource ActivumBlueGreen}" 
+                        TextColor="{StaticResource ActivumWhite}"
                         Clicked="OnNavigateToSalary"></Button>
 
             </Grid>
