@@ -2,6 +2,7 @@
 using System;
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
+using System.Linq;
 using System.Text;
 
 namespace PRG1_MAUI_ERP_Activum.ViewModels
@@ -46,7 +47,7 @@ namespace PRG1_MAUI_ERP_Activum.ViewModels
             Insurances.Clear();
             foreach (var ins in list)
             {
-                Insurance.Add(ins);
+                Insurances.Add(ins);
             }
         
         }

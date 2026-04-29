@@ -1,47 +1,38 @@
-
-using System.Collections.ObjectModel;
+using PRG1_MAUI_ERP_Activum.Models;
+using PRG1_MAUI_ERP_Activum.ViewModels;
 
 namespace PRG1_MAUI_ERP_Activum.View;
 
 public partial class CustomersPage : ContentPage
 {
-	public ObservableCollection<Customer> Customers { get; set; }
+    private CustomerViewModel _viewModel;
 
-	public CustomersPage()
-	{
-		InitializeComponent();
+    public CustomersPage()
+    {
+        InitializeComponent();
 
-		Customers = new ObservableCollection<Customer>
-		{
-			new Customer {Name = "Försäkringar AB", Email = "svenskaforsakringar@email.se"},
-			new Customer {Name = "Peters Bygg och Kakel", Email = "Peter@bygg.se " }
-		};
-		CustomerListView.ItemsSource = Customers;
-	}
+        _viewModel = new CustomerViewModel();
+        BindingContext = _viewModel;
+        CustomerListView.ItemsSource = _viewModel.Customers;
+    }
 
+    private void OnAddCustomerClicked(object sender, EventArgs e)
+    {
+        if (!string.IsNullOrWhiteSpace(CustomerNameEntry.Text) &&  !string.IsNullOrWhiteSpace(CustomerEmailEntry.Text))
 
+        {
+            _viewModel.AddCustomer(new Customer
+            {
+                FirstName = CustomerNameEntry.Text,
+                Email = CustomerEmailEntry.Text,
+                CustomerType = "Företag"
+            });
 
-
-	private void OnAddCustomerClicked(object sender, EventArgs e)
-	{
-		if (!string.IsNullOrWhiteSpace(CustomerNameEntry.Text) && !string.IsNullOrWhiteSpace(CustomerEmailEntry.Text))
-		{
-			Customers.Add(new Customer
-			{
-				Name = CustomerNameEntry.Text,
-				Email = CustomerEmailEntry.Text
-			});
-
-			CustomerNameEntry.Text = string.Empty;
-			CustomerEmailEntry.Text = string.Empty;
-
-			CustomerNameEntry.Focus();
-		}
-	}
+            CustomerNameEntry.Text = string.Empty;
+            CustomerEmailEntry.Text = string.Empty;
+            CustomerNameEntry.Focus();
+            
+        }
+    }
 }
 
-public  class Customer
-{
-	public string Name { get; set; }
-	public string Email { get; set; }
-}

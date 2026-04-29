@@ -10,22 +10,40 @@ public partial class CustomFlyoutView : ContentView
 
     public CustomFlyoutView()
     {
-        NavigateCommand = new Command<string>(async (page) =>
+        try
         {
-            Debug.WriteLine($"[CustomFlyoutView] NavigateCommand: {page}");
-            await Shell.Current.GoToAsync($"//{page}");
-            Shell.Current.FlyoutIsPresented = false;
-        });
+            NavigateCommand = new Command<string>(async (page) =>
+            {
+                Debug.WriteLine($"[CustomFlyoutView] NavigateCommand: {page}");
+                
+                if (page == "CalculatorPage" || page == "SalaryPage" || page == "PerDiemPage" || page == "AboutPage" || page == "SupportPage")
+                {
+                    await Shell.Current.GoToAsync(page);
+                }
+                else
+                {
+                    await Shell.Current.GoToAsync($"//{page}");
+                }
+                Shell.Current.FlyoutIsPresented = false;
+            });
 
-        ToggleToolsCommand = new Command(() =>
+            ToggleToolsCommand = new Command(() =>
+            {
+                Debug.WriteLine("[CustomFlyoutView] ToggleToolsCommand executed");
+                if (ToolsSubMenu != null)
+                {
+                    ToolsSubMenu.IsVisible = !ToolsSubMenu.IsVisible;
+                }
+            });
+
+            InitializeComponent();
+            BindingContext = this;
+        }
+        catch (Exception ex)
         {
-            Debug.WriteLine("[CustomFlyoutView] ToggleToolsCommand executed");
-            ToolsSubMenu.IsVisible = !ToolsSubMenu.IsVisible;
-        });
-
-        InitializeComponent();
-
-        BindingContext = this;
+            Debug.WriteLine($"[CustomFlyoutView] Error in constructor: {ex}");
+            throw;
+        }
     }
 }
 

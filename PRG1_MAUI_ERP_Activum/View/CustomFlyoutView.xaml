@@ -1,16 +1,14 @@
 <?xml version="1.0" encoding="utf-8" ?>
-<ContentView
-    x:Name="Root"
-    xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
-    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
-    x:Class="PRG1_MAUI_ERP_Activum.View.CustomFlyoutView"
-    BackgroundColor="#134f5c" 
-    HorizontalOptions="Fill"
-    WidthRequest="{OnPlatform WinUI=350, Android=300, iOS=300}" >
+<ContentView xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="PRG1_MAUI_ERP_Activum.View.CustomFlyoutView"
+             x:Name="Root"
+             BackgroundColor="#134f5c"
+             HorizontalOptions="Fill"
+             WidthRequest="{OnPlatform WinUI=350, Android=300, iOS=300}">
 
     <!-- Denna är en layouthack, då FlyOut inte fungerar fullt ut i .NET 10. Än? -->
-    
-    <ScrollView >
+    <ScrollView>
         <VerticalStackLayout Padding="20" Spacing="30">
 
             <!-- Menyrubrik -->
@@ -18,195 +16,147 @@
                    TextColor="White"
                    FontSize="32"
                    HorizontalOptions="Center" />
-            
+
             <!-- Start -->
             <VerticalStackLayout Spacing="18">
-                <Grid ColumnDefinitions="40,*"
-                      Padding="5">
+                <Grid ColumnDefinitions="40,*" Padding="5">
                     <Grid.GestureRecognizers>
-                        <TapGestureRecognizer 
-                            Command="{Binding NavigateCommand}"
-                            CommandParameter="MainPage" />
+                        <TapGestureRecognizer Command="{Binding NavigateCommand}" 
+                                              CommandParameter="MainPage" />
                     </Grid.GestureRecognizers>
-
                     <Image Source="home_white.png"
                            WidthRequest="17"
                            HeightRequest="17" />
-
                     <Label Grid.Column="1"
                            Text="Start"
                            FontSize="20"
-                           TextColor="White"/>
+                           TextColor="White" />
                 </Grid>
-                
-                <!-- Kunder -->
-                <Grid ColumnDefinitions="40,*"
-                      Padding="5">
-                    <Grid.GestureRecognizers>
-                        <TapGestureRecognizer
-                            Command="{Binding NavigateCommand}"
-                            CommandParameter="CustomersPage" />
-                    </Grid.GestureRecognizers>
 
+                <!-- Kunder -->
+                <Grid ColumnDefinitions="40,*" Padding="5">
+                    <Grid.GestureRecognizers>
+                        <TapGestureRecognizer Command="{Binding NavigateCommand}" 
+                                              CommandParameter="CustomersPage" />
+                    </Grid.GestureRecognizers>
                     <Image Source="customer_white.png"
                            WidthRequest="17"
-                           HeightRequest="17"
-                           />
-
+                           HeightRequest="17" />
                     <Label Grid.Column="1"
                            Text="Kunder"
                            FontSize="20"
-                           TextColor="White"/>
+                           TextColor="White" />
                 </Grid>
-                
-                <!-- Försäkringar -->
-                <Grid ColumnDefinitions="40,*"
-                      Padding="5">
-                    <Grid.GestureRecognizers>
-                        <TapGestureRecognizer 
-                            Command="{Binding NavigateCommand}"
-                            CommandParameter="InsurancePage" />
-                    </Grid.GestureRecognizers>
 
+                <!-- Försäkringar -->
+                <Grid ColumnDefinitions="40,*" Padding="5">
+                    <Grid.GestureRecognizers>
+                        <TapGestureRecognizer Command="{Binding NavigateCommand}" 
+                                              CommandParameter="InsurancePage" />
+                    </Grid.GestureRecognizers>
                     <Image Source="insurance_white.png"
                            WidthRequest="17"
-                           HeightRequest="17"
-                           />
-
+                           HeightRequest="17" />
                     <Label Grid.Column="1"
                            Text="Försäkringar"
                            FontSize="20"
-                           TextColor="White"/>
+                           TextColor="White" />
                 </Grid>
 
-                <!-- Verktyg. Ska inte gå att klicka på -->
-                <Grid ColumnDefinitions="40,*"
-                      Padding="5">
+                <!-- Verktyg -->
+                <Grid ColumnDefinitions="40,*" Padding="5">
                     <Grid.GestureRecognizers>
-                        <TapGestureRecognizer 
-                            Command="{Binding ToggleToolsCommand}" />
+                        <TapGestureRecognizer Command="{Binding ToggleToolsCommand}" />
                     </Grid.GestureRecognizers>
-
                     <Image Source="tools_white.png"
                            WidthRequest="17"
-                           HeightRequest="17"
-                           />
-
+                           HeightRequest="17" />
                     <Label Grid.Column="1"
                            Text="Verktyg"
                            FontSize="20"
-                           TextColor="White"/>
+                           TextColor="White" />
                 </Grid>
 
                 <!-- Undermeny, under verktyg -->
-                <VerticalStackLayout 
-                        x:Name="ToolsSubMenu"
-                        Spacing="12"
-                        IsVisible="False"
-                        Margin="20,0,0,0">
+                <VerticalStackLayout x:Name="ToolsSubMenu"
+                                     Spacing="12"
+                                     IsVisible="False"
+                                     Margin="20,0,0,0">
 
                     <!-- Kalkylator -->
-                    <Grid
-                        ColumnDefinitions="40,*"
-                        Padding="5">
-
+                    <Grid ColumnDefinitions="40,*" Padding="5">
                         <Grid.GestureRecognizers>
-                            <TapGestureRecognizer 
-                                Command="{Binding NavigateCommand}"
-                                CommandParameter="CalculatorPage" />
+                            <TapGestureRecognizer Command="{Binding NavigateCommand}" 
+                                                  CommandParameter="CalculatorPage" />
                         </Grid.GestureRecognizers>
-
-                        <Image
-                                Source="calculator_white.png"
-                                WidthRequest="16"
-                                HeightRequest="16" />
-                        <Label
-                                Grid.Column="1"
-                                Text="Kalkylator"
-                                TextColor="White"
-                                FontSize="18" />
+                        <Image Source="calculator_white.png"
+                               WidthRequest="16"
+                               HeightRequest="16" />
+                        <Label Grid.Column="1"
+                               Text="Kalkylator"
+                               TextColor="White"
+                               FontSize="18" />
                     </Grid>
 
                     <!-- Lön & Bonus -->
-                    <Grid
-                        ColumnDefinitions="40,*"
-                        Padding="5">
+                    <Grid ColumnDefinitions="40,*" Padding="5">
                         <Grid.GestureRecognizers>
-                            <TapGestureRecognizer
-                                Command="{Binding NavigateCommand}"
-                                CommandParameter="SalaryPage" />
+                            <TapGestureRecognizer Command="{Binding NavigateCommand}" 
+                                                  CommandParameter="SalaryPage" />
                         </Grid.GestureRecognizers>
-                        <Image
-                                Source="salary_white.png"
-                                WidthRequest="17"
-                                HeightRequest="17" />
-                        <Label
-                                Grid.Column="1"
-                                Text="Lön &amp; Bonus"
-                                TextColor="White"
-                                FontSize="18" />
+                        <Image Source="salary_white.png"
+                               WidthRequest="17"
+                               HeightRequest="17" />
+                        <Label Grid.Column="1"
+                               Text="Lön &amp; Bonus"
+                               TextColor="White"
+                               FontSize="18" />
                     </Grid>
 
                     <!-- Traktamente -->
-                    <Grid
-                        ColumnDefinitions="40,*"
-                        Padding="5">
+                    <Grid ColumnDefinitions="40,*" Padding="5">
                         <Grid.GestureRecognizers>
-                            <TapGestureRecognizer
-                                Command="{Binding NavigateCommand}"
-                                CommandParameter="PerDiemPage" />
+                            <TapGestureRecognizer Command="{Binding NavigateCommand}" 
+                                                  CommandParameter="PerDiemPage" />
                         </Grid.GestureRecognizers>
-                        <Image
-                                Source="plane_white.png"
-                                WidthRequest="17"
-                                HeightRequest="17" />
-                        <Label 
-                                Grid.Column="1" 
-                                Text="Traktamenten" 
-                                TextColor="White" 
-                                FontSize="18" />
+                        <Image Source="plane_white.png"
+                               WidthRequest="17"
+                               HeightRequest="17" />
+                        <Label Grid.Column="1"
+                               Text="Traktamenten"
+                               TextColor="White"
+                               FontSize="18" />
                     </Grid>
 
                     <!-- Om utvecklarna -->
-                    <Grid
-                        ColumnDefinitions="40,*"
-                        Padding="5">
+                    <Grid ColumnDefinitions="40,*" Padding="5">
                         <Grid.GestureRecognizers>
-                            <TapGestureRecognizer 
-                                    Command="{Binding NavigateCommand}"
-                                    CommandParameter="AboutPage" />
+                            <TapGestureRecognizer Command="{Binding NavigateCommand}" 
+                                                  CommandParameter="AboutPage" />
                         </Grid.GestureRecognizers>
-                        <Image 
-                                Source="cheese_white.png"
-                                WidthRequest="17"
-                                HeightRequest="17" />
-                        <Label 
-                                Grid.Column="1" 
-                                Text="Om utvecklarna" 
-                                TextColor="White" 
-                                FontSize="18" />
+                        <Image Source="cheese_white.png"
+                               WidthRequest="17"
+                               HeightRequest="17" />
+                        <Label Grid.Column="1"
+                               Text="Om utvecklarna"
+                               TextColor="White"
+                               FontSize="18" />
                     </Grid>
                 </VerticalStackLayout>
 
                 <!-- Hjälp & Support -->
-                <Grid
-                    ColumnDefinitions="40,*"
-                    Padding="5">
+                <Grid ColumnDefinitions="40,*" Padding="5">
                     <Grid.GestureRecognizers>
-                        <TapGestureRecognizer 
-                            Command="{Binding NavigateCommand}"
-                            CommandParameter="SupportPage" />
+                        <TapGestureRecognizer Command="{Binding NavigateCommand}" 
+                                              CommandParameter="SupportPage" />
                     </Grid.GestureRecognizers>
-
                     <Image Source="support_white.png"
                            WidthRequest="17"
-                           HeightRequest="17"
-                           />
-
+                           HeightRequest="17" />
                     <Label Grid.Column="1"
                            Text="Hjälp &amp; Support"
                            FontSize="20"
-                           TextColor="White"/>
+                           TextColor="White" />
                 </Grid>
             </VerticalStackLayout>
         </VerticalStackLayout>

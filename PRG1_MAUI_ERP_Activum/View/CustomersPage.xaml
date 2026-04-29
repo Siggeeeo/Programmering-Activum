@@ -10,11 +10,11 @@
             <Label Text="Kundregister" VerticalOptions="Center" TextColor="{StaticResource ActivumWhite}" FontSize="25"></Label>
         </Grid>
 
-        <Frame Grid.Row="1" Margin="25,10" Padding="16" BackgroundColor="{StaticResource ActivumWhite}" BorderColor="{StaticResource ActivumBlueGreen}">
+        <Frame Grid.Row="1" Margin="20,10" Padding="15">
             <VerticalStackLayout Spacing="10">
                 <Label Text="Lägg till ny kund" TextColor="{StaticResource ActivumBlueGreen}"></Label>
-                <Entry x:Name="CustomerNameEntry" Placeholder="Företagsnamn / Kundnamn" TextColor="{StaticResource PrimaryText}"></Entry>
-                <Entry x:Name="CustomerEmailEntry" Placeholder="E-Postadress" Keyboard="Email" TextColor="{StaticResource PrimaryText}"></Entry>
+                <Entry x:Name="CustomerNameEntry" Placeholder="Företagsnamn / Kundnamn"></Entry>
+                <Entry x:Name="CustomerEmailEntry" Placeholder="E-Postadress" Keyboard="Email"></Entry>
                 <Button Text="Spara Kund"
                         BackgroundColor="{StaticResource ActivumBlueGreen}"
                         TextColor="{StaticResource ActivumWhite}"
@@ -22,17 +22,17 @@
             </VerticalStackLayout>
         </Frame>
 
-        <CollectionView Grid.Row="2" x:Name="CustomerListView" Margin="20,0,20,20">
+        <CollectionView Grid.Row="2" x:Name="CustomerListView" Margin="20,0">
             <CollectionView.Header>
-                <Label Text="Aktiva Kunder" FontSize="18" Margin="0,10" TextColor="{StaticResource PrimaryText}"></Label>
+                <Label Text="Aktiva Kunder" FontSize="18" Margin="0,10"></Label>
             </CollectionView.Header>
             <CollectionView.ItemTemplate>
                 <DataTemplate>
-                    <Frame Margin="0,5" Padding="15" BorderColor="{StaticResource ActivumWhite}">
+                    <Frame Margin="0,5" Padding="15" BackgroundColor="{StaticResource ActivumWhite}" BorderColor="{StaticResource ActivumWhite}">
                         <HorizontalStackLayout Spacing="15">
                             <VerticalStackLayout>
-                                <Label Text="{Binding Name}" FontSize="16" TextColor="{StaticResource PrimaryText}"></Label>
-                                <Label Text="{Binding Email}" FontSize="16" TextColor="{StaticResource SecondaryText}"></Label>
+                                <Label Text="{Binding Name}" FontSize="16" TextColor="{StaticResource ActivumBlack}"></Label>
+                                <Label Text="{Binding Email}" FontSize="13" TextColor="{StaticResource SecondaryText}"></Label>
                             </VerticalStackLayout>
                         </HorizontalStackLayout>
                     </Frame>

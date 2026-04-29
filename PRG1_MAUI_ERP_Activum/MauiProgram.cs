@@ -17,7 +17,7 @@ namespace PRG1_MAUI_ERP_Activum
                 });
 
 #if DEBUG
-    		builder.Logging.AddDebug();
+            builder.Logging.AddDebug();
 
             builder.Services.AddSingleton<CustomerViewModel>();
 #endif

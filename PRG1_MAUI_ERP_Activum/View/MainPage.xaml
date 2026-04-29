@@ -3,89 +3,49 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              xmlns:sys="clr-namespace:System;assembly=netstandard"
              x:Class="PRG1_MAUI_ERP_Activum.View.MainPage"
-             Title="Start"
-             BackgroundColor="#1E1E2E">
+             Title="Hem"
+             BackgroundColor="White">
 
-    <ScrollView Padding="20">
-        <Grid RowDefinitions="Auto,30,40,Auto,Auto,20,Auto,Auto,50,Auto,Auto,Auto,Auto"
-              ColumnDefinitions="*,Auto"
-              RowSpacing="10">
+    <ScrollView>
+        <VerticalStackLayout Spacing="25" Padding="20">
+            <Label Text="Välkommen till Activum"
+                   FontSize="30"
+                   HorizontalOptions="Center"
+                   TextColor="{StaticResource ActivumBlueGreen}"
+                   Margin="0,20,0,10"></Label>
 
-            <Label Grid.Row="0" Grid.ColumnSpan="2"
-                   Padding="20"
-                   Text="Activum"
-                   TextColor="White"
-                   FontSize="36" FontAttributes="Bold"
-                   SemanticProperties.HeadingLevel="Level1" />
+            <Label Text="Välj ett val nedan för att starta"
+                   FontSize="17"
+                   HorizontalOptions="Center"
+                   TextColor="{StaticResource SecondaryText}"></Label>
 
-            <Label Grid.Row="1" Grid.ColumnSpan="2"
-                   Text="Kundnummer / Personnummer"
-                   TextColor="LightGray"
-                   FontAttributes="Bold"
-                   Margin="0,0,0,4"/>
+            <Grid ColumnDefinitions="*,*" RowDefinitions="100, 100" RowSpacing="15" ColumnSpacing="15" Margin="0,20,0,0">
 
-            <Entry x:Name="CustomerIdEntry"
-                   Grid.Row="2"
-                   Grid.Column="0"
-                   Placeholder="Ange kundnr/personnr"
-                   TextColor="White" BackgroundColor="#2A2A3E"
-                   ReturnType="Search"
-                   Completed="OnSearchCompleted" />
+                <Button Grid.Row="0" Grid.Column="0"
+                        Text="Kunder"
+                        FontSize="17"
+                        BackgroundColor="{StaticResource ActivumBlueGreen}" TextColor="{StaticResource ActivumWhite}"
+                        Clicked="OnNavigateToCustomers"></Button>
 
-            <ImageButton x:Name="SearchButton"
-                         Grid.Row="2"
-                         Grid.Column="1"
-                         Source="search.png"
-                         BackgroundColor="Transparent"
-                         HeightRequest="20"
-                         WidthRequest="20"
-                         Margin="10,0,0,0"
-                         Aspect="AspectFill"
-                         Clicked="OnSearchClicked" />
+                <Button Grid.Row="0" Grid.Column="1"
+                        Text="Försäkringar"
+                        FontSize="17"
+                        BackgroundColor="{StaticResource ActivumBlueGreen}" TextColor="{StaticResource ActivumWhite}"
+                        Clicked="OnNavigateToInsurance"></Button>
+                
+                <Button Grid.Row="1" Grid.Column="0"
+                        Text="Traktamente"
+                        FontSize="17"
+                        BackgroundColor="{StaticResource ActivumBlueGreen}" TextColor="{StaticResource ActivumWhite}"
+                        Clicked="OnNavigateToPerDiem"></Button>
+                
+                <Button Grid.Row="1" Grid.Column="1"
+                        Text="Lön och Bonus"
+                        FontSize="17"
+                        BackgroundColor="{StaticResource ActivumBlueGreen}" TextColor="{StaticResource ActivumWhite}"
+                        Clicked="OnNavigateToSalary"></Button>
 
-            <Label Grid.Row="4" Grid.ColumnSpan="2"
-                   Text="Försäkringar aktuell kund"
-                   TextColor="LightGray"
-                   FontAttributes="Bold"
-                   Margin="0,30,0,4"/>
-
-            <Label x:Name="InsuranceStatusLabel"
-                   Grid.Row="5"
-                   Grid.ColumnSpan="2"
-                   Text="Ingen sökning ännu"
-                   TextColor="Gray" />
-
-            <Label Grid.Row="6" Grid.ColumnSpan="2"
-                   Text="Skadeståndsanmälan (anteckningar)"
-                   TextColor="LightGray"
-                   FontAttributes="Bold"
-                   Margin="0,30,0,4"/>
-
-            <Editor x:Name="NotesEditor"
-                    Grid.Row="7"
-                    Grid.ColumnSpan="2"
-                    HeightRequest="160"
-                    AutoSize="TextChanges"
-                    BackgroundColor="#2A2A3E" TextColor="White" />
-
-            <Label Grid.Row="8" Grid.ColumnSpan="2"
-                   Text="Datum skadeanmälan mottogs"
-                   TextColor="LightGray"
-                   FontAttributes="Bold"
-                   Margin="0,20,0,4"/>
-
-            <DatePicker x:Name="DatePickerField"
-                        Grid.Row="9"
-                        Grid.ColumnSpan="2"
-                        Date="{x:Static sys:DateTime.Today}"
-                        BackgroundColor="#2A2A3E" TextColor="White" />
-
-            <Button Grid.Row="10" Grid.ColumnSpan="2"
-                    Text="Spara anteckning"
-                    BackgroundColor="#4299E1"
-                    TextColor="White"
-                    Margin="0,20,0,0"
-                    Clicked="OnSaveNotesClicked" />
-        </Grid>
+            </Grid>
+        </VerticalStackLayout>
     </ScrollView>
 </ContentPage>
